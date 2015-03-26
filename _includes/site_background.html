@@ -1,0 +1,7 @@
+<div class="bg-container"
+     data-animation="{{ site.defaults.appearAnimation }}"
+     data-delay="{{ site.defaults.delayStyle }}">
+    {% for item in (1..450) %}
+        <div class="bg-block animated thm-{{ site.defaults.appearAnimation }} thm-delay{% random 4 %} color{% random 5 %}"></div>
+    {% endfor %}
+</div>

@@ -1,0 +1,21 @@
+<header class="site-header page-section">
+    <div class="col-wrapper">
+        <div class="col col-50">
+            {% if page.name == 'index.html' %}
+                <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
+            {% else %}
+                <h2 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h2>
+            {% endif %}
+            <p class="site-slogan">{{ site.slogans[0] }}</p>
+        </div>
+        <nav class="site-nav col col-50 text-right">
+            {% for page in site.pages %}
+              {% if page.title %}
+              <a class="nav-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+              {% endif %}
+            {% endfor %}
+              <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+    </div>
+
+</header>

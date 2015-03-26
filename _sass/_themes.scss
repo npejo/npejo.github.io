@@ -1,0 +1,115 @@
+/* ---------------------
+   Light Blue Theme
+   --------------------- */
+body.thm-light-blue-theme {
+  .bg-block {
+    &.color0 {
+      background-color: #8BACBD;
+    }
+    &.color1 {
+      background-color: #d0d0d0;
+    }
+    &.color2 {
+      background-color: #FDF3E7;
+    }
+    &.color3 {
+      background-color: #e0e0e0;
+    }
+    &.color4 {
+      background-color: darken(#FDF3E7, 5%);
+    }
+  }
+  h1, h2, h3, a {
+    color: darken(#8BACBD, 20%);
+  }
+  a:hover {
+    color: $text-color;
+  }
+}
+
+/* ---------------------
+   Green Brown Theme
+   --------------------- */
+body.thm-green-brown-theme {
+  .bg-block {
+    &.color0 {
+      background-color: #FFEFD3;
+    }
+    &.color1 {
+      background-color: #FFFEE4;
+    }
+    &.color2 {
+      background-color: #D0ECEA;
+    }
+    &.color3 {
+      background-color: #9FD6D2;
+    }
+    &.color4 {
+      background-color: lighten(#8B7A5E, 25%);
+    }
+  }
+  h1, h2, h3, a {
+    color: darken(#9FD6D2, 45%);
+  }
+  a:hover {
+    color: $text-color;
+  }
+}
+
+/* ---------------------
+   Pinky Theme
+   --------------------- */
+body.thm-pink-brown-theme {
+  .bg-block {
+    &.color0 {
+      background-color: #DCF7F3;
+    }
+    &.color1 {
+      background-color: #FFFCDD;
+    }
+    &.color2 {
+      background-color: #FFD8D8;
+    }
+    &.color3 {
+      background-color: #F5A2A2;
+    }
+    &.color4 {
+      background-color: lighten(#805841, 25%);
+    }
+  }
+  h1, h2, h3, a {
+    color: darken(#F5A2A2, 45%);
+  }
+  a:hover {
+    color: $text-color;
+  }
+}
+
+/* ---------------------
+   Blue Green Theme
+   --------------------- */
+body.thm-blue-green-theme {
+  .bg-block {
+    &.color0 {
+      background-color: #ADDDCF;
+    }
+    &.color1 {
+      background-color: #CACCB6;
+    }
+    &.color2 {
+      background-color: #F2F0DF;
+    }
+    &.color3 {
+      background-color: #A9C1D9;
+    }
+    &.color4 {
+      background-color: #ABE1FD;
+    }
+  }
+  h1, h2, h3, a {
+    color: darken(#A9C1D9, 25%);
+  }
+  a:hover {
+    color: $text-color;
+  }
+}

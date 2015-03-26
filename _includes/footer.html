@@ -1,0 +1,56 @@
+<footer id="contact" class="site-footer page-section page-section-last">
+
+    <div class="col-wrapper">
+        <div class="col  col-50">
+            <h3 class="footer-heading">CONTACT</h3>
+            <ul class="social-media-list">
+                <li>
+                    <a href="mailto:{{ site.email }}"
+                       class="social-icon"
+                       title="Send an email message"
+                       target="_blank">
+                        {% include svg_icons/mail.svg %}
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ site.social.linkedin.url }}"
+                       class="social-icon"
+                       title="Linkedin: {{ site.social.linkedin.username }}"
+                       target="_blank">
+                        {% include svg_icons/linkedin.svg %}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col col-50">
+            <h3 class="footer-heading">FOLLOW</h3>
+            <ul class="social-media-list">
+                {% if site.social.github %}
+                <li>
+                    <a href="{{ site.social.github.url }}"
+                       title="Github: {{ site.social.github.username }}"
+                       class="social-icon"
+                       target="_blank">
+                        {% include svg_icons/github.svg %}
+                    </a>
+                </li>
+                {% endif %}
+
+                {% if site.social.twitter %}
+                <li>
+                    <a href="{{ site.social.twitter.url }}"
+                       title="Twitter: {{ site.social.twitter.username }}"
+                       class="social-icon"
+                       target="_blank">
+                        {% include svg_icons/twitter.svg %}
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+    <span class="footer-bottom-info">
+        Nikola Pejoski 2015 &bull; subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
+    </span>
+
+</footer>

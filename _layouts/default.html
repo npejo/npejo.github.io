@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <!--<body class="light-blue-theme">-->
+  <!--<body class="green-brown-theme">-->
+  <!--<body class="pink-brown-theme">-->
+  <body class="thm-blue-green-theme">
+
+    {% include site_background.html %}
+
+    <div class="wrapper content-container">
+        <div id="themeSwitcher">
+            <button class="jsThemeTrigger" data-theme="light-blue-theme">Theme1</button>
+            <button class="jsThemeTrigger" data-theme="green-brown-theme">Theme2</button>
+            <button class="jsThemeTrigger" data-theme="pink-brown-theme">Theme3</button>
+            <button class="jsThemeTrigger" data-theme="blue-green-theme">Theme4</button>
+        </div>
+        {% include header.html %}
+
+        <div class="page-content">
+            {{ content }}
+        </div>
+
+        {% include footer.html %}
+
+    </div>
+
+        {% include foot_scripts.html %}
+
+  </body>
+</html>
