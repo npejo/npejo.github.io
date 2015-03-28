@@ -2,12 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>@nikolapejo</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
-</description>
+    <description>Nikola Pejoski, full stack web developer, frontend engineer, passionate programmer</description>
     <link>http://nikola.pejoski.com/</link>
     <atom:link href="http://nikola.pejoski.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Mar 2015 04:41:46 +0100</pubDate>
-    <lastBuildDate>Thu, 26 Mar 2015 04:41:46 +0100</lastBuildDate>
+    <pubDate>Sat, 28 Mar 2015 21:12:39 +0100</pubDate>
+    <lastBuildDate>Sat, 28 Mar 2015 21:12:39 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
