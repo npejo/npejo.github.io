@@ -1,3 +1,5 @@
+//= require jquery-2.1.3.min
+
 (function($) {
     'use strict';
 
@@ -26,14 +28,13 @@
         while (idx === null || (ignoreElement && inputArray[idx] === ignoreElement)) {
             idx = getRandomNumInRange(0, inputArray.length - 1);
         }
-        console.log(inputArray[idx], ignoreElement);
         return inputArray[idx];
     };
 
     var defaults = {
-        themes: ['light-blue-theme', 'green-brown-theme', 'pink-brown-theme', 'blue-green-theme'],
-        appearAnimations: ['fadeIn', 'zoomIn', 'flash'],
-        appearDelayStyle: ['none', 'linear', 'random'],
+        themes: [],
+        appearAnimations: [],
+        appearDelayStyle: [],
         segmentClass: '.bg-block',
         themeContainer: 'body',
         segmentContClass: '.bg-container',
@@ -94,30 +95,28 @@
             $elem.addClass(this.options.thmPrefix + newAnimation);
 
             // depending on the delay style set appropriate delay index class
-            var delayIdx = null;
+            var delayIdx = 0;
             switch (newDelayStyle) {
                 case 'linear':
-                    delayIdx = i % (this.options.nbrDelays - 1) + 1;
+                    delayIdx = i % (this.options.nbrDelays - 1);
                     break;
                 case 'random':
                     delayIdx = getRandomNumInRange(1, this.options.nbrDelays);
                     break;
             }
 
-            // if delay style is different than 'none', set delay class
-            if (delayIdx) {
-                $elem.addClass(this.options.thmPrefix + 'delay' + delayIdx);
-            }
+            $elem.addClass(this.options.thmPrefix + 'delay' + delayIdx);
 
             // set the new theme class main theme container
             var $themeContainer = $(this.options.themeContainer);
 
             // remove current theme
             $themeContainer.removeClass(function (index, css) {
+                //var rgx = new RegExp('\\b' + this.options.thmPrefix + '\\S+/g');
                 return (css.match(/\bthm-\S+/g) || []).join(' ');
             });
 
-            $themeContainer.addClass(this.options.thmPrefix + themeName);
+            $themeContainer.addClass(themeName);
             $themeContainer.data('theme', themeName);
 
         }, this));

@@ -1,5 +1,5 @@
 # npejo.github.io
-# Sorce code of my personal blog
+## Source code of my personal blog
 ### Powered by Jekyll
 
 ##License

@@ -2,11 +2,10 @@
 title: '@nikolapejo'
 slogan: sharing thoughts space
 email: pejoski@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: Nikola Pejoski, full stack web developer, frontend engineer, passionate programmer
+
 baseurl: "" # the subpath of your site, e.g. /blog/
+
 url: "http://nikola.pejoski.com" # the base hostname & protocol for your site
 
 social:
@@ -25,12 +24,28 @@ slogans:
   - Look around, there might be something useful
   - Sharing thoughts here
 
+# color themes
+themes:
+  - 'thm-light-blue'
+  - 'thm-green-brown'
+  - 'thm-pink-brown'
+  - 'thm-blue-green'
+
+# animations for displaying background segments
+appearAnimations: ['fadeIn', 'zoomIn']
+
+# rules how background segments appearance animation will be delayed
+appearDelayStyle: ['linear', 'random']
+
+# default background style
 defaults:
+  theme: 'thm-blue-green'
   appearAnimation: fadeIn
   delayStyle: random
 
 # Build settings
 markdown: kramdown
 
-#sass:
-#  style: :compressed
+assets:
+  js_compressor:  uglifier
+  css_compressor: sass

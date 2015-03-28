@@ -3,19 +3,15 @@
 
   {% include head.html %}
 
-  <!--<body class="light-blue-theme">-->
-  <!--<body class="green-brown-theme">-->
-  <!--<body class="pink-brown-theme">-->
-  <body class="thm-blue-green-theme">
+  <body class="{{ site.defaults.theme }}" data-theme="{{ site.defaults.theme }}">
 
     {% include site_background.html %}
 
     <div class="wrapper content-container">
         <div id="themeSwitcher">
-            <button class="jsThemeTrigger" data-theme="light-blue-theme">Theme1</button>
-            <button class="jsThemeTrigger" data-theme="green-brown-theme">Theme2</button>
-            <button class="jsThemeTrigger" data-theme="pink-brown-theme">Theme3</button>
-            <button class="jsThemeTrigger" data-theme="blue-green-theme">Theme4</button>
+            {% for thmName in site.themes %}
+                <button class="jsThemeTrigger" data-theme="{{ thmName }}">{{ thmName }}</button>
+            {% endfor %}
         </div>
         {% include header.html %}
 
@@ -27,7 +23,7 @@
 
     </div>
 
-        {% include foot_scripts.html %}
+    {% include footer_scripts.html %}
 
   </body>
 </html>

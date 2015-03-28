@@ -1,0 +1,15 @@
+{% javascript themeSwitcher %}
+<script>
+    $(document).ready(function() {
+        var options = {};
+        options.themes = ['{{ site.themes | join:"','" }}'];
+        options.appearAnimations = ['{{ site.appearAnimations | join:"','" }}'];
+        options.appearDelayStyle = ['{{ site.appearDelayStyle | join:"','" }}'];
+
+        var $ts = $('#themeSwitcher');
+        $ts.themeSwitcher(options);
+
+        // check cookies if the user set preferred theme, otherwise choose random theme
+        $ts.data('themeSwitcher').setRandomTheme();
+    });
+</script>

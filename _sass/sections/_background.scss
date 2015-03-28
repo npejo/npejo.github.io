@@ -13,18 +13,14 @@
   margin: $bg-spacing-unit;
   float: left;
   &:hover {
-    -webkit-animation-name: fadeOut;
-    animation-name: fadeOut;
-    -webkit-animation-duration: 0.15s;
-    animation-duration: 0.15s;
+    @include prefix('animation-name', 'fadeOut');
+    @include prefix('animation-duration', '0.15s');
   }
 }
 
 .animated {
-  -webkit-animation-duration: $bg-animation-duration;
-  animation-duration: $bg-animation-duration;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+  @include prefix('animation-duration', $bg-animation-duration);
+  @include prefix('animation-fill-mode', 'both');
 }
 
 /* ---------------------
@@ -33,148 +29,80 @@
 
 /* --- FadeIn --- */
 @-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
+  0% { opacity: 0; }
 
-  100% {
-    opacity: 1;
-  }
+  100% { opacity: 1; }
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
+  0% { opacity: 0; }
 
-  100% {
-    opacity: 1;
-  }
+  100% { opacity: 1; }
 }
 
 .thm-fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-}
-
-/* --- Flash --- */
-@-webkit-keyframes flash {
-  0%, 50%, 100% {
-    opacity: 1;
-  }
-
-  25%, 75% {
-    opacity: 0;
-  }
-}
-
-@keyframes flash {
-  0%, 50%, 100% {
-    opacity: 1;
-  }
-
-  25%, 75% {
-    opacity: 0;
-  }
-}
-
-.thm-flash {
-  -webkit-animation-name: flash;
-  animation-name: flash;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s;
+  @include prefix('animation-name', 'fadeIn');
 }
 
 /* --- ZoomIn --- */
 @-webkit-keyframes zoomIn {
   0% {
     opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
+    @include prefix('transform', 'scale3d(.3, .3, .3)');
   }
 
-  50% {
-    opacity: 1;
-  }
+  50% { opacity: 1; }
 }
 
 @keyframes zoomIn {
   0% {
     opacity: 0;
-    -webkit-transform: scale3d(.3, .3, .3);
-    transform: scale3d(.3, .3, .3);
+    @include prefix('transform', 'scale3d(.3, .3, .3)');
   }
 
-  50% {
-    opacity: 1;
-  }
+  50% { opacity: 1; }
 }
 
 .thm-zoomIn {
-  -webkit-animation-name: zoomIn;
-  animation-name: zoomIn;
-}
-
-/* --- ZoomIn --- */
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
+  @include prefix('animation-name', 'zoomIn');
 }
 
 /* --- FadeOut --- */
 @-webkit-keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
+  0% { opacity: 1; }
 
-  100% {
-    opacity: 0;
-  }
+  100% { opacity: 0; }
 }
 
 @keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
+  0% { opacity: 1; }
 
-  100% {
-    opacity: 0;
-  }
+  100% { opacity: 0; }
 }
 
 .thm-fadeOut {
-  -webkit-animation-name: fadeOut;
-  animation-name: fadeOut;
+  @include prefix('animation-name', 'fadeOut');
 }
 
 /* ---------------------
    Animations delay
    --------------------- */
+.thm-delay0 {
+  @include prefix('animation-delay', $bg-animation-delay / 4);
+}
+
 .thm-delay1 {
-  -webkit-animation-delay: $bg-animation-delay / 4; /* Chrome, Safari, Opera */
-  animation-delay: $bg-animation-delay / 4;
+  @include prefix('animation-delay', $bg-animation-delay / 3);
 }
 
 .thm-delay2 {
-  -webkit-animation-delay: $bg-animation-delay / 3; /* Chrome, Safari, Opera */
-  animation-delay: $bg-animation-delay / 3;
+  @include prefix('animation-delay', $bg-animation-delay / 2);
 }
 
 .thm-delay3 {
-  -webkit-animation-delay: $bg-animation-delay / 2; /* Chrome, Safari, Opera */
-  animation-delay: $bg-animation-delay / 2;
+  @include prefix('animation-delay', $bg-animation-delay);
 }
 
-.thm-delay4 {
-  -webkit-animation-delay: $bg-animation-delay; /* Chrome, Safari, Opera */
-  animation-delay: $bg-animation-delay;
+.thm-onload-delay0, .thm-onload-delay1, .thm-onload-delay2, .thm-onload-delay3 {
+  @include prefix('animation-delay', $bg-animation-delay-onload);
 }

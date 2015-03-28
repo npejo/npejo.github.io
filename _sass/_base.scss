@@ -89,6 +89,10 @@ a:active, a:visited {
   outline: none;
 }
 
+a:hover {
+  color: $text-color;
+}
+
 /**
  * Blockquotes
  */

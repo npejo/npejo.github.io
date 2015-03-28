@@ -1,6 +1,3 @@
----
-# Only the main Sass file needs front matter  (the dashes are enough)
----
 @charset "utf-8";
 
 $base-font-family: 'Roboto', Helvetica, Arial, sans-serif;
@@ -15,12 +12,13 @@ $text-color: #333333;
 $background-color: #fafafa;
 
 $grey-color: #9a9a9a;
-$grey-color-light: lighten($grey-color, 40%);
+$grey-color-light: lighten($grey-color, 20%);
 $grey-color-dark: darken($grey-color, 25%);
 
 // Background related variables
 $bg-spacing-unit: 0.2%;
 $bg-animation-delay: 1s;
+$bg-animation-delay-onload: 2s;
 $bg-animation-duration: 1s;
 
 // Width of the content area
@@ -42,14 +40,19 @@ $on-laptop: 800px;
   }
 }
 
+@mixin prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+  #{$name}: #{$argument};
+}
+
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-  "base",
-  "layout",
-  "syntax-highlighting",
-  "themes",
-  "sections/background",
-  "sections/header",
-  "sections/content",
-  "sections/footer"
+  "_sass/_base",
+  "_sass/_layout",
+  "_sass/_syntax-highlighting",
+  "_sass/_themes",
+  "_sass/sections/_background",
+  "_sass/sections/_header",
+  "_sass/sections/_content",
+  "_sass/sections/_footer"
 ;
