@@ -28,8 +28,10 @@ slogans:
 themes:
   - 'thm-light-blue'
   - 'thm-green-brown'
-  - 'thm-pink-brown'
-  - 'thm-blue-green'
+  - 'thm-red-orange'
+  - 'thm-blue-green-light'
+  - 'thm-red-brown'
+  - 'thm-blue-green-dark'
 
 # animations for displaying background segments
 appearAnimations: ['fadeIn', 'zoomIn']
@@ -40,12 +42,10 @@ appearDelayStyle: ['linear', 'random']
 # default background style
 defaults:
   theme: 'thm-blue-green'
-  appearAnimation: fadeIn
-  delayStyle: random
 
 # Build settings
 markdown: kramdown
 
 assets:
-  js_compressor:  uglifier
+#  js_compressor:  uglifier
   css_compressor: sass

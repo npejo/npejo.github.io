@@ -8,11 +8,7 @@
     {% include site_background.html %}
 
     <div class="wrapper content-container">
-        <div id="themeSwitcher">
-            {% for thmName in site.themes %}
-                <button class="jsThemeTrigger" data-theme="{{ thmName }}">{{ thmName }}</button>
-            {% endfor %}
-        </div>
+
         {% include header.html %}
 
         <div class="page-content">

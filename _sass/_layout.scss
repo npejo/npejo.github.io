@@ -20,6 +20,10 @@
   &.page-section-solid {
     background-color: rgba(255,255,255, 1);
   }
+
+  @include media-query($on-palm) {
+    padding: $spacing-unit / 2;
+  }
 }
 
 .col-wrapper {
@@ -29,7 +33,10 @@
 
 .col {
   float: left;
-  padding-left: $spacing-unit / 2;
+  margin-left: 2%;
+  &.first {
+    margin-left: 0;
+  }
 }
 
 .col-50 {
@@ -38,8 +45,11 @@
 
   @include media-query($on-palm) {
     float: none;
-    padding-left: 0;
     margin: 0;
     width: 100%;
   }
+}
+
+.col-15 {
+  width: 15%;
 }

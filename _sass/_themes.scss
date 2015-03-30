@@ -1,55 +1,131 @@
 /* ---------------------
    Light Blue Theme
    --------------------- */
-body.thm-light-blue {
-  .bg-block {
-    &.color0 { background-color: #8BACBD; }
-    &.color1 { background-color: #d0d0d0; }
-    &.color2 { background-color: #FDF3E7; }
-    &.color3 { background-color: #e0e0e0; }
-    &.color4 { background-color: darken(#FDF3E7, 5%); }
+.thm-light-blue {
+  &, .bg-block {
+    @include setThemeColors(
+            lighten(#8BACBD, 10%),
+            #d0d0d0,
+            #FDF3E7,
+            #e0e0e0,
+            darken(#FDF3E7, 5%)
+    );
   }
+
   h1, h2, h3, a { color: darken(#8BACBD, 20%); }
+  a:hover { color: $text-color; }
+  .switch-btn.selected {
+    border-bottom: 2px solid darken(#8BACBD, 20%);
+  }
 }
 
 /* ---------------------
    Green Brown Theme
    --------------------- */
-body.thm-green-brown {
-  .bg-block {
-    &.color0 { background-color: #FFEFD3; }
-    &.color1 { background-color: #FFFEE4; }
-    &.color2 { background-color: #D0ECEA; }
-    &.color3 { background-color: #9FD6D2; }
-    &.color4 { background-color: lighten(#8B7A5E, 25%); }
+.thm-green-brown {
+  @include setThemeColors(
+          #FFEFD3,
+          #FFFEE4,
+          #D0ECEA,
+          #9FD6D2,
+          lighten(#8B7A5E, 25%)
+  );
+
+  .bg-container {
+    opacity: 0.8;
   }
   h1, h2, h3, a { color: darken(#9FD6D2, 45%); }
+  a:hover { color: $text-color; }
+  .switch-btn.selected {
+    border-bottom: 2px solid darken(#9FD6D2, 45%);
+  }
 }
 
 /* ---------------------
-   Pinky Theme
+   Brown Orange Theme
    --------------------- */
-body.thm-pink-brown {
-  .bg-block {
-    &.color0 { background-color: #DCF7F3; }
-    &.color1 { background-color: #FFFCDD; }
-    &.color2 { background-color: #FFD8D8; }
-    &.color3 { background-color: #F5A2A2; }
-    &.color4 { background-color: lighten(#805841, 25%); }
+.thm-red-orange {
+  @include setThemeColors(
+          lighten(#6F5846, 50%),
+          lighten(#A95A52, 30%),
+          lighten(#E35B5D, 20%),
+          lighten(#F18052, 10%),
+          lighten(#FFA446, 10%)
+  );
+
+  .bg-container {
+    opacity: 0.6;
   }
-  h1, h2, h3, a { color: darken(#F5A2A2, 45%); }
+  h1, h2, h3, a { color: darken(#F18052, 25%); }
+  a:hover { color: $text-color; }
+  .switch-btn.selected {
+    border-bottom: 2px solid darken(#F18052, 25%);
+  }
 }
 
 /* ---------------------
-   Blue Green Theme
+   Blue Green Light Theme
    --------------------- */
-body.thm-blue-green {
-  .bg-block {
-    &.color0 { background-color: #ADDDCF; }
-    &.color1 { background-color: #CACCB6; }
-    &.color2 { background-color: #F2F0DF; }
-    &.color3 { background-color: #A9C1D9; }
-    &.color4 { background-color: #ABE1FD; }
+.thm-blue-green-light {
+  @include setThemeColors(
+          #ADDDCF,
+          #CACCB6,
+          #F2F0DF,
+          #A9C1D9,
+          #ABE1FD
+  );
+
+  .bg-container {
+    opacity: 0.8;
   }
-  h1, h2, h3, a { color: darken(#A9C1D9, 25%); }
+  h1, h2, h3, a { color: darken(#A9C1D9, 30%); }
+  a:hover { color: $text-color; }
+  .switch-btn.selected {
+    border-bottom: 2px solid darken(#A9C1D9, 30%);
+  }
+}
+
+/* ---------------------
+   Red Brown Theme
+   --------------------- */
+.thm-red-brown {
+  @include setThemeColors(
+          #785D56,
+          #BE4C54,
+          #C6B299,
+          #E6D5C1,
+          #FFF4E3
+  );
+
+  .bg-container {
+    opacity: 0.5;
+  }
+  h1, h2, h3, a { color: darken(#BE4C54, 20%); }
+  a:hover { color: $text-color; }
+  .switch-btn.selected {
+    border-bottom: 2px solid darken(#BE4C54, 20%);
+  }
+}
+
+/* ---------------------
+   Blue Green Dark Theme
+   --------------------- */
+.thm-blue-green-dark {
+  @include setThemeColors(
+          #8E9E82,
+          #CACCB6,
+          #F2F0DF,
+          #A9C1D9,
+          #607890
+  );
+
+  .bg-container {
+    opacity: 0.8;
+  }
+
+  h1, h2, h3, a { color: darken(#8E9E82, 20%); }
+  a:hover { color: $text-color; }
+  .switch-btn.selected {
+    border-bottom: 2px solid darken(#8E9E82, 20%);
+  }
 }

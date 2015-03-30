@@ -7,8 +7,8 @@
 }
 
 .bg-block {
-  width: 4.6%;
-  height: 4.6%;
+  width: $bg-segment-width;
+  height: $bg-segment-height;
   box-sizing: border-box;
   margin: $bg-spacing-unit;
   float: left;

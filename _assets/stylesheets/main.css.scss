@@ -16,8 +16,10 @@ $grey-color-light: lighten($grey-color, 20%);
 $grey-color-dark: darken($grey-color, 25%);
 
 // Background related variables
-$bg-spacing-unit: 0.2%;
-$bg-animation-delay: 1s;
+$bg-segment-width: 4.8%;
+$bg-segment-height: 4.8%;
+$bg-spacing-unit: 0.1%;
+$bg-animation-delay: 0.5s;
 $bg-animation-delay-onload: 2s;
 $bg-animation-duration: 1s;
 
@@ -43,6 +45,22 @@ $on-laptop: 800px;
 @mixin prefix($name, $argument) {
   -webkit-#{$name}: #{$argument};
   #{$name}: #{$argument};
+}
+
+@mixin setThemeColors($color0, $color1, $color2, $color3, $color4) {
+  >.color0 { background-color: $color0; }
+  >.color1 { background-color: $color1; }
+  >.color2 { background-color: $color2; }
+  >.color3 { background-color: $color3; }
+  >.color4 { background-color: $color4; }
+
+  .bg-block {
+    &.color0 { background-color: $color0; }
+    &.color1 { background-color: $color1; }
+    &.color2 { background-color: $color2; }
+    &.color3 { background-color: $color3; }
+    &.color4 { background-color: $color4; }
+  }
 }
 
 // Import partials from `sass_dir` (defaults to `_sass`)

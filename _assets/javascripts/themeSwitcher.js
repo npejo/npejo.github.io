@@ -1,5 +1,11 @@
 //= require jquery-2.1.3.min
+//= require jquery.cookie
 
+/**
+ * jQuery Plugin for managing the color themes of the website
+ *
+ * @author Nikola Pejoski
+ */
 (function($) {
     'use strict';
 
@@ -43,62 +49,123 @@
     };
 
     /**
+     * Plugin that handles the theme switching: setting random or chosen theme,
+     * choosing random appearance animation and random type of the available appearance delay options
+     *
+     * Bind this plugin to parent container of the theme switching triggers.
      *
      * @param element
      * @param options
      * @constructor
      */
     function ThemeSwitcher(element, options) {
-        this._name = pluginName;
-        this.element = element;
-
-        this._defaults = defaults;
+        this.$element = $(element);
         this.options = $.extend({}, defaults, options) ;
 
         this.init();
     }
 
     ThemeSwitcher.prototype.init = function() {
-        $(this.element).on('click', '.jsThemeTrigger', $.proxy(this.switchTheme, this));
+        // bind click event to them change trigger elements
+        this.$element.on('click', '.jsThemeTrigger', $.proxy(this.switchTheme, this));
     };
 
+    /**
+     * Theme switching click handler method.
+     * Stores the current theme choice as preferred and activates the chosen theme
+     *
+     * @param e
+     */
     ThemeSwitcher.prototype.switchTheme = function(e) {
-        var newTheme = $(e.currentTarget).data('theme');
+        e.preventDefault();
+        var $currentTarget = $(e.currentTarget);
+        var newTheme = $currentTarget.data('theme');
+
+        // mark current target as selected
+        this.$element.find('.switch-btn').removeClass('selected');
+        $currentTarget.addClass('selected');
+
+        // save current choice as preferred theme
+        this.savePreferredTheme(newTheme);
+
         this.setTheme(newTheme);
     };
 
+    /**
+     * Choose randomly new appearance animation and delay style and set the input themeName as active
+     *
+     * @param themeName
+     */
     ThemeSwitcher.prototype.setTheme = function(themeName) {
         var $segContainer = $(this.options.segmentContClass);
-        var $segments = $(this.options.segmentClass);
 
         // fetch the current appearance animation and delay style
         var curAnimation = $segContainer.data('animation');
         var curDelay = $segContainer.data('delay');
 
-        // set new randomly chosen animation
         var newAnimation = getRandomArrayElement(this.options.appearAnimations, curAnimation);
+        // set new randomly chosen animation as current
         $segContainer.data('animation', newAnimation);
 
-        // set new randomly chosen delay style
         var newDelayStyle = getRandomArrayElement(this.options.appearDelayStyle, curDelay);
+        // set new randomly chosen delay style as current
+        $segContainer.data('delay', newDelayStyle);
 
         // update each segment of the theme with new random animation and delay
+        this.updateThemeSegments(newAnimation, newDelayStyle);
+
+        var $themeContainer = $(this.options.themeContainer);
+        // remove current theme classes from main theme container
+        this.cleanThemeClasses($themeContainer);
+
+        // set the new theme class to main theme container
+        $themeContainer.addClass(themeName);
+        $themeContainer.data('theme', themeName);
+    };
+
+    /**
+     * Set random theme
+     */
+    ThemeSwitcher.prototype.setRandomTheme = function() {
+        var curTheme = $(this.options.themeContainer).data('theme');
+        var newTheme = getRandomArrayElement(this.options.themes, curTheme);
+
+        this.setTheme(newTheme);
+    };
+
+    /**
+     * Remove all css classes that have theme prefix from the input $elem
+     * @param $elem
+     */
+    ThemeSwitcher.prototype.cleanThemeClasses = function($elem) {
+        var rgx = new RegExp('\\b' + this.options.thmPrefix + '\\S+', 'g');
+        $elem.removeClass(function (index, css) {
+            return (css.match(rgx) || []).join(' ');
+        });
+    };
+
+    /**
+     * Loop through each theme segment and set the input 'animation' and 'delayStyle'
+     *
+     * @param animation
+     * @param delayStyle
+     */
+    ThemeSwitcher.prototype.updateThemeSegments = function(animation, delayStyle) {
+        var $segments = $(this.options.segmentClass);
         $.each($segments, $.proxy(function(i, segment) {
             var $elem = $(segment);
 
             // remove current theme classes
-            $elem.removeClass(function (index, css) {
-                return (css.match(/\bthm-\S+/g) || []).join(' ');
-            });
+            this.cleanThemeClasses($elem);
 
             // set new animation class
-            $elem.addClass(this.options.thmPrefix + newAnimation);
+            $elem.addClass(this.options.thmPrefix + animation);
 
             // depending on the delay style set appropriate delay index class
             var delayIdx = 0;
-            switch (newDelayStyle) {
+            switch (delayStyle) {
                 case 'linear':
-                    delayIdx = i % (this.options.nbrDelays - 1);
+                    delayIdx = i % this.options.nbrDelays;
                     break;
                 case 'random':
                     delayIdx = getRandomNumInRange(1, this.options.nbrDelays);
@@ -107,26 +174,23 @@
 
             $elem.addClass(this.options.thmPrefix + 'delay' + delayIdx);
 
-            // set the new theme class main theme container
-            var $themeContainer = $(this.options.themeContainer);
-
-            // remove current theme
-            $themeContainer.removeClass(function (index, css) {
-                //var rgx = new RegExp('\\b' + this.options.thmPrefix + '\\S+/g');
-                return (css.match(/\bthm-\S+/g) || []).join(' ');
-            });
-
-            $themeContainer.addClass(themeName);
-            $themeContainer.data('theme', themeName);
-
         }, this));
     };
 
-    ThemeSwitcher.prototype.setRandomTheme = function() {
-        var curTheme = $(this.options.themeContainer).data('theme');
-        var newTheme = getRandomArrayElement(this.options.themes, curTheme);
+    /**
+     * Save the themeName as preferred theme in cookies
+     * @param themName
+     */
+    ThemeSwitcher.prototype.savePreferredTheme = function(themName) {
+        $.cookie('npejo.preferredTheme', themName, { path: '/' });
+    };
 
-        this.setTheme(newTheme);
+    /**
+     * Return the saved theme value from cookies
+     * @returns bool|string
+     */
+    ThemeSwitcher.prototype.getSavedTheme = function() {
+        return $.cookie('npejo.preferredTheme');
     };
 
     $.fn[pluginName] = function(options) {

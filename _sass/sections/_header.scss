@@ -2,7 +2,8 @@
  * Site header
  */
 .site-header {
-  text-align: center;
+  padding-top: $spacing-unit / 2;
+  padding-bottom: 0;
   @extend %clearfix;
 }
 
@@ -11,6 +12,10 @@
   margin-bottom: 0;
   font-weight: bold;
   font-family: $base-font-family;
+
+  @include media-query($on-palm) {
+    text-align: center;
+  }
 }
 
 .site-slogan {
@@ -18,10 +23,15 @@
   font-size: $small-font-size;
   margin-bottom: 0;
   font-family: $base-font-family;
+
+  @include media-query($on-palm) {
+    text-align: center;
+  }
 }
 
 .site-nav {
-  padding-top: 10px;
+  padding: 10px 0 0 10px;
+  text-align: right;
   .nav-link {
     color: $grey-color-dark;
     font-weight: bold;
@@ -39,5 +49,26 @@
   @include media-query($on-palm) {
     padding-top: 0;
     text-align: center;
+  }
+}
+
+.theme-switcher {
+  margin: ($spacing-unit / 2) 0;
+
+  .switch-btn {
+    @extend %clearfix;
+    height: 20px;
+    position:relative;
+    box-shadow: 1px 1px 1px #bbb;
+
+    &:hover:not(.selected) {
+      box-shadow: 1px 1px 5px #bbb;
+    }
+  }
+
+  .thm-color {
+    width: 20%;
+    height: 100%;
+    float: left;
   }
 }

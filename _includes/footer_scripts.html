@@ -9,7 +9,13 @@
         var $ts = $('#themeSwitcher');
         $ts.themeSwitcher(options);
 
-        // check cookies if the user set preferred theme, otherwise choose random theme
-        $ts.data('themeSwitcher').setRandomTheme();
+        // check if the user has preferred theme, otherwise choose random theme
+        var preferredTheme = $ts.data('themeSwitcher').getSavedTheme();
+
+        if (preferredTheme) {
+            $ts.data('themeSwitcher').setTheme(preferredTheme);
+        } else {
+            $ts.data('themeSwitcher').setRandomTheme();
+        }
     });
 </script>
