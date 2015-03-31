@@ -4,19 +4,19 @@
 .thm-light-blue {
   &, .bg-block {
     @include setThemeColors(
-            lighten(#8BACBD, 10%),
+            #acc3cf,
             #d0d0d0,
-            #FDF3E7,
             #e0e0e0,
-            darken(#FDF3E7, 5%)
+            #FDF3E7,
+            #fbe7cf
     );
   }
 
-  h1, h2, h3, a { color: darken(#8BACBD, 20%); }
-  a:hover { color: $text-color; }
+  h1, h2, h3, a { color: #527b90; }
   .switch-btn.selected {
-    border-bottom: 2px solid darken(#8BACBD, 20%);
+    border-bottom: 2px solid #527b90;
   }
+  a:hover { color: $text-color; }
 }
 
 /* ---------------------
@@ -24,21 +24,18 @@
    --------------------- */
 .thm-green-brown {
   @include setThemeColors(
-          #FFEFD3,
-          #FFFEE4,
-          #D0ECEA,
-          #9FD6D2,
-          lighten(#8B7A5E, 25%)
+          #cec5b7,
+          #fef1db,
+          #fefde8,
+          #d8eeed,
+          #b1ddda
   );
 
-  .bg-container {
-    opacity: 0.8;
-  }
-  h1, h2, h3, a { color: darken(#9FD6D2, 45%); }
-  a:hover { color: $text-color; }
+  h1, h2, h3, a { color: #2b6560; }
   .switch-btn.selected {
-    border-bottom: 2px solid darken(#9FD6D2, 45%);
+    border-bottom: 2px solid #2b6560;
   }
+  a:hover { color: $text-color; }
 }
 
 /* ---------------------
@@ -46,21 +43,18 @@
    --------------------- */
 .thm-red-orange {
   @include setThemeColors(
-          lighten(#6F5846, 50%),
-          lighten(#A95A52, 30%),
-          lighten(#E35B5D, 20%),
-          lighten(#F18052, 10%),
-          lighten(#FFA446, 10%)
+          #e8d4d3,
+          #f5cfd0,
+          #ece6e2,
+          #fdd6ad,
+          #f7c6b2
   );
 
-  .bg-container {
-    opacity: 0.6;
-  }
-  h1, h2, h3, a { color: darken(#F18052, 25%); }
-  a:hover { color: $text-color; }
+  h1, h2, h3, a { color: #b53f0f; }
   .switch-btn.selected {
-    border-bottom: 2px solid darken(#F18052, 25%);
+    border-bottom: 2px solid #b53f0f;
   }
+  a:hover { color: $text-color; }
 }
 
 /* ---------------------
@@ -68,21 +62,18 @@
    --------------------- */
 .thm-blue-green-light {
   @include setThemeColors(
-          #ADDDCF,
-          #CACCB6,
-          #F2F0DF,
-          #A9C1D9,
-          #ABE1FD
+          #bce3d7,
+          #d3d5c3,
+          #f3f2e4,
+          #bbe6fc,
+          #b9ccdf
   );
 
-  .bg-container {
-    opacity: 0.8;
-  }
-  h1, h2, h3, a { color: darken(#A9C1D9, 30%); }
-  a:hover { color: $text-color; }
+  h1, h2, h3, a { color: #4774a2; }
   .switch-btn.selected {
-    border-bottom: 2px solid darken(#A9C1D9, 30%);
+    border-bottom: 2px solid #4774a2;
   }
+  a:hover { color: $text-color; }
 }
 
 /* ---------------------
@@ -90,21 +81,18 @@
    --------------------- */
 .thm-red-brown {
   @include setThemeColors(
-          #785D56,
-          #BE4C54,
-          #C6B299,
-          #E6D5C1,
-          #FFF4E3
+          #b8aba7,
+          #dfd5c9,
+          #fcf6ee,
+          #e3dbd0,
+          #dba2a6
   );
 
-  .bg-container {
-    opacity: 0.5;
-  }
-  h1, h2, h3, a { color: darken(#BE4C54, 20%); }
-  a:hover { color: $text-color; }
+  h1, h2, h3, a { color: #782c31; }
   .switch-btn.selected {
-    border-bottom: 2px solid darken(#BE4C54, 20%);
+    border-bottom: 2px solid #782c31;
   }
+  a:hover { color: $text-color; }
 }
 
 /* ---------------------
@@ -112,20 +100,16 @@
    --------------------- */
 .thm-blue-green-dark {
   @include setThemeColors(
-          #8E9E82,
-          #CACCB6,
-          #F2F0DF,
-          #A9C1D9,
-          #607890
+          #a3b09a,
+          #d3d5c3,
+          #f3f2e4,
+          #b9ccdf,
+          #7f92a5
   );
 
-  .bg-container {
-    opacity: 0.8;
-  }
-
-  h1, h2, h3, a { color: darken(#8E9E82, 20%); }
-  a:hover { color: $text-color; }
+  h1, h2, h3, a { color: #5b6951; }
   .switch-btn.selected {
-    border-bottom: 2px solid darken(#8E9E82, 20%);
+    border-bottom: 2px solid #5b6951;
   }
+  a:hover { color: $text-color; }
 }
