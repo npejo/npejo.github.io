@@ -1,6 +1,9 @@
 # npejo.github.io
-## Source code of my personal blog
-### Powered by Jekyll
+## Build version of my personal blog
+
+Check out the source code in the [source branch][https://github.com/npejo/npejo.github.io/tree/source]
+
+#### Powered by Jekyll
 
 ##License
 The content of the `_posts/` is Copyright Nikola Pejoski. You may not reuse anything therein without my permission.
