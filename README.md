@@ -1,6 +1,6 @@
 ## Build version of my blog
 
-It took me few days to develop it, but it was in the background of my thoughts for more than a year.
+It took me few days to develop it, but it was in the background of my mind for more than a year.
 
 I wanted to build a website without any image in the structure and that will be generate randomly, so it will surprise even me when I visit it.
 
