@@ -13,6 +13,9 @@
   font-weight: bold;
   font-family: $base-font-family;
 
+  a:hover {
+    text-decoration: none;
+  }
   @include media-query($on-palm) {
     text-align: center;
   }
@@ -70,5 +73,17 @@
     width: 20%;
     height: 100%;
     float: left;
+  }
+}
+
+.info-message {
+  font: $small-font-size $handwriting-font-family;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1;
+  letter-spacing: 1.5px;
+
+  @include media-query($on-palm) {
+    font-size: $xsmall-font-size;
   }
 }

@@ -1,12 +1,15 @@
-<div id="themeSwitcher" class="col-wrapper theme-switcher">
-    {% for thmName in site.themes %}
-    <a href="#"
-       rel="nofollow"
-       class="col col-15 switch-btn {% if forloop.index == 1 %}first{% endif %} {{ thmName }} jsThemeTrigger"
-       data-theme="{{ thmName }}">
-        {% for i in (0..4) %}
-            <div class="thm-color color{{ i }}"></div>
+<div id="themeSwitcher" class="theme-switcher">
+    <div class="col-wrapper">
+        {% for thmName in site.themes %}
+        <a href="#"
+           rel="nofollow"
+           class="col col-15 switch-btn {% if forloop.index == 1 %}first{% endif %} {{ thmName }} jsThemeTrigger"
+           data-theme="{{ thmName }}">
+            {% for i in (0..4) %}
+                <div class="thm-color color{{ i }}"></div>
+            {% endfor %}
+        </a>
         {% endfor %}
-    </a>
-    {% endfor %}
+    </div>
+    <div class="info-message hidden">This theme was randomly selected. Choose the one that looks best to you.</div>
 </div>

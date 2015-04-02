@@ -202,12 +202,9 @@
         var $currentTarget = $(e.currentTarget);
         var newTheme = $currentTarget.data('theme');
 
-        // mark current target as selected
-        this.$element.find('.switch-btn').removeClass('selected');
-        $currentTarget.addClass('selected');
-
         // save current choice as preferred theme
         this.savePreferredTheme(newTheme);
+        this.hideInfoMessage();
 
         this.setTheme(newTheme);
     };
@@ -234,6 +231,9 @@
 
         // update each segment of the theme with new random animation and delay
         this.updateThemeSegments(newAnimation, newDelayStyle);
+
+        // add selected class to current theme link
+        this.setCurrentThemeAsActive(themeName);
 
         var $themeContainer = $(this.options.themeContainer);
         // remove current theme classes from main theme container
@@ -303,7 +303,7 @@
      * @param themName
      */
     ThemeSwitcher.prototype.savePreferredTheme = function(themName) {
-        $.cookie('npejo.preferredTheme', themName, { path: '/' });
+        $.cookie('npejo.preferredTheme', themName, { expires: 3, path: '/' });
     };
 
     /**
@@ -312,6 +312,30 @@
      */
     ThemeSwitcher.prototype.getSavedTheme = function() {
         return $.cookie('npejo.preferredTheme');
+    };
+
+    /**
+     * Mark as 'selected' the link that represents 'themeName' in the Theme Switcher section
+     */
+    ThemeSwitcher.prototype.setCurrentThemeAsActive = function(themeName) {
+        this.$element.find('.switch-btn').removeClass('selected');
+        this.$element.find('.switch-btn[data-theme=' + themeName + ']').addClass('selected');
+    };
+
+    /**
+     * Show the info message element in the theme switcher section
+     */
+    ThemeSwitcher.prototype.showInfoMessage = function () {
+        this.$element.find('.info-message').removeClass('hidden');
+    };
+
+    /**
+     * Hide the info message element in the theme switcher section
+     */
+    ThemeSwitcher.prototype.hideInfoMessage = function () {
+        this.$element.find('.info-message').fadeOut(function() {
+            $(this).addClass('hidden');
+        });
     };
 
     $.fn[pluginName] = function(options) {

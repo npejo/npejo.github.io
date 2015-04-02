@@ -83,6 +83,10 @@ h1, h2, h3, h4, h5, h6 {
 a {
   color: $text-color;
   text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 a:active, a:visited {
@@ -157,6 +161,10 @@ pre {
 
 .text-right {
   text-align: right;
+}
+
+.hidden {
+  display: none;
 }
 
 /**

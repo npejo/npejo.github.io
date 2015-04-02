@@ -35,7 +35,7 @@
   .switch-btn.selected {
     border-bottom: 2px solid #2b6560;
   }
-  a:hover { color: $text-color; }
+  a:hover { color: $text-color; text-decoration: underline;}
 }
 
 /* ---------------------
@@ -54,7 +54,7 @@
   .switch-btn.selected {
     border-bottom: 2px solid #b53f0f;
   }
-  a:hover { color: $text-color; }
+  a:hover { color: $text-color; text-decoration: underline;}
 }
 
 /* ---------------------
@@ -73,7 +73,7 @@
   .switch-btn.selected {
     border-bottom: 2px solid #4774a2;
   }
-  a:hover { color: $text-color; }
+  a:hover { color: $text-color; text-decoration: underline;}
 }
 
 /* ---------------------
@@ -92,7 +92,7 @@
   .switch-btn.selected {
     border-bottom: 2px solid #782c31;
   }
-  a:hover { color: $text-color; }
+  a:hover { color: $text-color; text-decoration: underline;}
 }
 
 /* ---------------------
@@ -111,5 +111,5 @@
   .switch-btn.selected {
     border-bottom: 2px solid #5b6951;
   }
-  a:hover { color: $text-color; }
+  a:hover { color: $text-color; text-decoration: underline;}
 }

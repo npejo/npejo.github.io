@@ -4,9 +4,14 @@ title: About
 permalink: /about/
 ---
 
-Nikola Pejoski is full stack web developer
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+My name is **Nikola Pejoski**,
+I'm full stack web developer with more than 7 years of experience.
+In the last 3 years I have specialized in frontend technologies. 
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+I feel like home when I'm writing Javascript, PHP, CSS, HTML and SQL.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+In general, my professional interests include software architecture and design, performance optimization.
+
+I like to write software that looks good from both perspectives, for the users and for other developers.
+
+For more details about my background and portfolio please check my [LinkedIn profile]({{ site.social.linkedin.url }})
