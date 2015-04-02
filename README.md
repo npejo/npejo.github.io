@@ -1,4 +1,3 @@
-# npejo.github.io
 ## Source code of my blog
 #### Powered by Jekyll
 
