@@ -1,4 +1,3 @@
-# npejo.github.io
 ## Build version of my blog
 
 It took me few days to develop it, but it was in the background of my thoughts for more than a year.
