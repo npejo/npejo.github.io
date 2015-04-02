@@ -1,6 +1,6 @@
 # npejo.github.io
 ## Source code of my personal blog
-### Powered by Jekyll
+#### Powered by Jekyll
 
 ##License
 The content of the `_posts/` is Copyright Nikola Pejoski. You may not reuse anything therein without my permission.
