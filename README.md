@@ -1,5 +1,5 @@
 # npejo.github.io
-## Build version of my personal blog
+## Build version of my blog
 
 Check out the source code in the [source branch][source_branch]
 
