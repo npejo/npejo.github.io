@@ -6,7 +6,7 @@ permalink: /about/
 
 My name is **Nikola Pejoski**,
 I'm full stack web developer with more than 7 years of experience.
-In the vast set of languages, frameworks and tools that I have been working with in this period, the last 3 years I have specialized in frontend technologies. 
+There are many programming languages, frameworks and tools that I have been using in this period, but in the last 3 years I have specialized in frontend technologies. 
 
 I like to write software that looks good from both perspectives, for the users and for other developers.
 In general, the fields in which I like to extend my professional knowledge are software architecture and design, performance optimization and data analysis.
