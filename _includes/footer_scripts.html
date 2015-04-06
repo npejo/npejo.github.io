@@ -16,10 +16,7 @@
             $ts.data('themeSwitcher').setTheme(preferredTheme);
         } else {
             $ts.data('themeSwitcher').setRandomTheme();
-
-            if ('{{ page.home }}' == 'true') {
-                $ts.data('themeSwitcher').showInfoMessage();
-            }
+            $ts.data('themeSwitcher').showInfoMessage();
         }
     });
 </script>

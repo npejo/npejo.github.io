@@ -182,11 +182,10 @@
      * @param themName
      */
     ThemeSwitcher.prototype.savePreferredTheme = function(themName) {
-        $.cookie('npejo.preferredTheme', themName, { expires: 3, path: '/' });
+        $.cookie('npejo.preferredTheme', themName, { expires: 1, path: '/' });
     };
 
-    /**
-     * Return the saved theme value from cookies
+    /**     * Return the saved theme value from cookies
      * @returns bool|string
      */
     ThemeSwitcher.prototype.getSavedTheme = function() {

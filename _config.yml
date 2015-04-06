@@ -47,5 +47,5 @@ defaults:
 markdown: kramdown
 
 assets:
-#  js_compressor:  uglifier
+  js_compressor:  uglifier
   css_compressor: sass
