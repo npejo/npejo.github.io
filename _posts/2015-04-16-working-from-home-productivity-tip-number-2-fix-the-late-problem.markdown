@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Fix the "I'm late" problem - productivity tip no. 2
+title:  Fix the "I am late" problem - productivity tip no. 2
 date:   2015-04-16 11:23:00
 author: Nikola Pejoski
 excerpt: The formula that works for me is pretty simple, hope someone will find this advice useful.
