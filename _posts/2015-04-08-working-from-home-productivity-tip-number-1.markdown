@@ -26,3 +26,7 @@ once the things are done. Keep yourself out of the "burnout zone", it is hard an
 
 *What you read above is not a rule, but a reminder of something that we should all be aware of; 
 Something I've drawn out from my personal experience and I like to share with you.*
+
+**Next productivity tip**: [Fix the "I'm late" problem - productivity tip no. 2][productivity_tip_2]
+
+[productivity_tip_2]: {% post_url 2015-04-16-working-from-home-productivity-tip-number-2-fix-the-late-problem %}
